@@ -33,7 +33,6 @@ public class GraphRepositoryTests {
 	@Order(1)
 	public void shouldSaveAGraph() {
 		Graph savedGraph = graphRepository.save(testUtils.generateAPopulatedGraph());
-//		System.out.println(savedGraph);
 		assertThat(savedGraph.getId() instanceof Long).isEqualTo(true);
 	}
 	
@@ -41,8 +40,6 @@ public class GraphRepositoryTests {
 	@Order(2)
 	public void shouldGetAGraph() {
 		Optional<Graph> recoveredGraph = graphRepository.findById(1L);
-//		System.out.println(recoveredGraph.get());
-//		System.out.println(generateACharacter());
 		assertThat(recoveredGraph.isPresent()).isEqualTo(true);
 	}
 	

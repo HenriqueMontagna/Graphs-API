@@ -34,9 +34,7 @@ public class RouteRepositoryTests {
 	@Order(1)
 	public void shouldSaveARoute() {
 		graphRepository.save(testUtils.generateAEmptyDefaultGraph());
-//		System.out.println(createdGraph);
 		Route route = routeRepository.save(testUtils.generateARoute());
-//		System.out.println(route);
 		assertThat(route.getGraph().getId()).isEqualTo(1L);
 		assertThat(route.getGraph().getData().size()).isEqualTo(0);
 		assertThat(route.getSource()).isInstanceOf(String.class);
@@ -48,7 +46,6 @@ public class RouteRepositoryTests {
 	@Order(2)
 	public void shouldGetARoute() {
 		Route route = routeRepository.findById(1L).get();
-//		System.out.println(route.getId());
 		assertThat(route.getId()).isEqualTo(1L);
 	}
 
@@ -61,13 +58,5 @@ public class RouteRepositoryTests {
 		assertThat(size).isEqualTo(2L);
 	}
 
-//	@Test
-//	@Order(4)
-//	public void shouldGetRoutesByAttributes() {
-//		Route existingRoute = routeRepository.findById(1L).get();
-//		Route foundRoute = routeRepository.findOptionalBySourceAndTargetAndDistance(existingRoute.getSource(), existingRoute.getTarget(),
-//				existingRoute.getDistance()).get();
-//		System.out.println(foundRoute);
-//	}
 
 }
